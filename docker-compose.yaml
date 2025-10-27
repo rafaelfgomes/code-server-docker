@@ -10,11 +10,11 @@ services:
       - TZ=${TIMEZONE}
       - PASSWORD=${WEB_PASSWORD}
       - SUDO_PASSWORD=${ROOT_PASSWORD}
-      - DEFAULT_WORKSPACE=${WORKSPACE_FOLDER:-./projects}
+      - DEFAULT_WORKSPACE=/projects
       - PWA_APPNAME=${PWA_APPNAME:-code_server}
     volumes:
       - ${CONFIG_FOLDER:-./config}:/config
-      - ${WORKSPACE_FOLDER:-./projects}:/projects
+      - ${PROJECTS_FOLDER:-./projects}:/projects
     ports:
       - ${PORT:-8443}:8443
     restart: unless-stopped
