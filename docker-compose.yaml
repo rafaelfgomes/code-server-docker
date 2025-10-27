@@ -18,12 +18,9 @@ services:
     ports:
       - ${PORT:-8443}:8443
     restart: unless-stopped
-
-volumes:
-  config:
-    name: code-server-config
+    networks:
+      - net
 
 networks:
   net:
-    name: code-server-net
     external: false
