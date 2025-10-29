@@ -1,9 +1,8 @@
----
 services:
   code-server:
     image: lscr.io/linuxserver/code-server:latest
     container_name: code-server
-    hostname: code-server
+    hostname: ${HOSTNAME:-code-server}
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
@@ -11,7 +10,7 @@ services:
       - PASSWORD=${WEB_PASSWORD}
       - SUDO_PASSWORD=${ROOT_PASSWORD}
       - DEFAULT_WORKSPACE=/projects
-      - PWA_APPNAME=${PWA_APPNAME:-code_server}
+      - PWA_APPNAME=${PWA_APPNAME:-code-server}
     volumes:
       - ${CONFIG_FOLDER:-./config}:/config
       - ${PROJECTS_FOLDER:-./projects}:/projects
