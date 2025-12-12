@@ -14,17 +14,13 @@ services:
       - LANG=${LANG:-en_US.UTF-8}
       - LANGUAGE=${LANG:-en_US.UTF-8}
     volumes:
-      - config:/config
+      - ./config:/config
       - ${PROJECTS_FOLDER:-./projects}:/projects
     ports:
       - ${PORT:-8443}:8443
     restart: unless-stopped
     networks:
       - net
-
-volumes:
-  config:
-    name: code-server-config
 
 networks:
   net:
