@@ -22,6 +22,5 @@ services:
     networks:
       - net
 
-networks:
-  net:
-    external: false
+include:
+  - path: ${NETWORK_CONFIG_FILE}
