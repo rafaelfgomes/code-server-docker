@@ -14,7 +14,7 @@ services:
       - LANG=${LANG:-en_US.UTF-8}
       - LANGUAGE=${LANG:-en_US.UTF-8}
     volumes:
-      - ./config:/config
+      - ${CONFIG_FOLDER:-./config}:/config
       - ${PROJECTS_FOLDER:-./projects}:/projects
     ports:
       - ${PORT:-8443}:8443
