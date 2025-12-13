@@ -1,0 +1,4 @@
+services:
+  code-server:
+    ports:
+      - ${PORT:-8443}:8443

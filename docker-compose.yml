@@ -16,11 +16,10 @@ services:
     volumes:
       - ${CONFIG_FOLDER:-./config}:/config
       - ${PROJECTS_FOLDER:-./projects}:/projects
-    ports:
-      - ${PORT:-8443}:8443
     restart: unless-stopped
     networks:
       - net
 
 include:
+  - path: ${PORT_CONFIG_FILE}
   - path: ${NETWORK_CONFIG_FILE}
