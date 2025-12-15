@@ -18,8 +18,7 @@ services:
       - ${PROJECTS_FOLDER:-./projects}:/projects
     restart: unless-stopped
     networks:
-      - net
+      net:
 
-include:
-  - path: ${PORT_CONFIG_FILE}
-  - path: ${NETWORK_CONFIG_FILE}
+networks:
+  net: {}
